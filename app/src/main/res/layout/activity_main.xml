@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" android:background="@android:color/holo_blue_dark">
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/name_edit_text"
+            android:background="@android:color/background_light" android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="16dp"
+            android:paddingLeft="20dp"
+            android:hint="Name"
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/email_edit_text"
+    />
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/email_edit_text"
+            android:background="@android:color/background_light"
+            android:paddingLeft="20dp"
+            android:hint="E-mail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/password_edit_text"
+            android:layout_marginLeft="16dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/password_edit_text"
+            android:background="@android:color/background_light"
+            android:paddingLeft="20dp"
+            android:hint="Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/register_button" android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginRight="16dp"/>
+    <Button
+            android:text="Register"
+            android:layout_width="202dp"
+            android:layout_height="53dp"
+            android:id="@+id/register_button"
+            app:layout_constraintStart_toStartOf="@+id/password_edit_text"
+            app:layout_constraintEnd_toEndOf="@+id/password_edit_text" android:ellipsize="none"
+            android:layout_marginBottom="32dp" app:layout_constraintBottom_toTopOf="@+id/textView_signIn"/>
+    <TextView
+            android:text="Already a user?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_signIn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintStart_toStartOf="@+id/register_button" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="Sign In"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textButton_signIn"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@android:color/background_light"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="32dp" app:layout_constraintStart_toEndOf="@+id/textView_signIn"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="@+id/register_button"
+            android:layout_marginRight="8dp"/>
+</android.support.constraint.ConstraintLayout>
