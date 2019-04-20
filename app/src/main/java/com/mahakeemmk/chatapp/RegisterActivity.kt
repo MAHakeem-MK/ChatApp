@@ -8,10 +8,9 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_main.*
-import java.time.Duration
+import kotlinx.android.synthetic.main.activity_register.*
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth:FirebaseAuth
 
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_register)
 
         auth = FirebaseAuth.getInstance()
 
@@ -50,6 +49,9 @@ class MainActivity : AppCompatActivity() {
                         .addOnSuccessListener {
                             Log.d("register","name saved")
                         }
+                    val intent = Intent(this,LoginActivity::class.java)
+                    startActivity(intent)
+
                 }.addOnFailureListener {
                     Toast.makeText(this,it.message,Toast.LENGTH_LONG).show()
                 }
@@ -65,4 +67,6 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-class User(val uid:String,val name:String)
+class User(val uid:String,val name:String) {
+    constructor():this("","")
+}
