@@ -58,6 +58,12 @@ class ChatLogActivity : AppCompatActivity() {
                     Log.d("send message","successful")
                 }
 
+            val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest_messages/$fromId/$toId")
+            latestMessageRef.setValue(chatMessage)
+
+            val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest_messages/$toId/$fromId")
+            latestMessageRef.setValue(chatMessage)
+
         }
         val fromId = FirebaseAuth.getInstance().currentUser?.uid
         val toId = userId
